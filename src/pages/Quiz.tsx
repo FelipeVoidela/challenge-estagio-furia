@@ -206,7 +206,7 @@ const Quiz: React.FC = () => {
 
   const renderTelaInicial = () => {
     return (
-      <Card className="card-furia inicio-quiz-card text-center">
+      <Card className="card-quiz inicio-quiz-card text-center">
         <Card.Body>
           <h2 className="mb-4">Quiz FURIA</h2>
           <p className="lead mb-4">
@@ -262,14 +262,15 @@ const Quiz: React.FC = () => {
           </Col>
           
           <Col lg={4}>
-            <Card className="card-furia curiosidade-card h-100">
-              <Card.Body>
+            <Card className="card-curiosidade curiosidade-card h-50">
+              <Card.Body className='d-flex flex-column text-center align-items-center justify-content-center'>
                 <h4 className="mb-3">Você Sabia?</h4>
                 {curiosidadeAleatoria && (
                   <p>{curiosidadeAleatoria.texto}</p>
                 )}
                 <div className="text-center mt-4">
                   <Button 
+                    className="btn-furia" 
                     variant="outline-primary" 
                     size="sm"
                     onClick={() => {

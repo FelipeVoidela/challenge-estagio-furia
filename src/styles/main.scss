@@ -149,6 +149,21 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+// Card quiz
+.card-quiz {
+  border: none;
+  border-radius: $border-radius-lg;
+  box-shadow: 0.5px 0.5px 5px $dark;
+}
+.card-curiosidade {
+  border: none;
+  border-radius: 10%;
+  background-color: darken($light, 3%);
+  .btn-furia{
+    border-radius: 8%;
+  }
+}
+
 // Footer
 .footer {
   background-color: $dark;

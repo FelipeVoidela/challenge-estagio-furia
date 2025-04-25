@@ -1,0 +1,134 @@
+// Adicionar estilos específicos para o Quiz
+.quiz-card {
+  .opcao-quiz {
+    transition: $transition-base;
+    
+    &:hover {
+      background-color: rgba($secondary, 0.1);
+    }
+  }
+  
+  .opcao-selecionada {
+    background-color: rgba($secondary, 0.2);
+  }
+  
+  .opcao-correta {
+    background-color: rgba(#28a745, 0.2);
+    border-color: #28a745 !important;
+    border-left: 5px solid #28a745 !important;
+  }
+  
+  .opcao-incorreta {
+    background-color: rgba(#dc3545, 0.2);
+    border-color: #dc3545 !important;
+    border-left: 5px solid #dc3545 !important;
+  }
+}
+
+// Estilos para a página de detalhes do jogador
+.player-nickname {
+  color: $secondary;
+  font-weight: 800;
+}
+
+// Estilos para a página de conteúdo exclusivo
+.conteudo-exclusivo-page {
+  .card {
+    overflow: hidden;
+    
+    img, video {
+      transition: $transition-base;
+      
+      &:hover {
+        transform: scale(1.02);
+      }
+    }
+  }
+}
+
+// Estilos para a página de loja
+.product-card {
+  .product-price {
+    font-size: $font-size-lg;
+  }
+}
+
+// Estilos para a página de notícias
+.news-card {
+  .news-date {
+    font-size: $font-size-sm;
+    color: lighten($dark, 30%);
+  }
+}
+
+// Animações adicionais
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+// Melhorias de acessibilidade
+:focus {
+  outline: 2px solid $secondary;
+  outline-offset: 2px;
+}
+
+// Melhorias para dispositivos móveis
+@media (max-width: $breakpoint-md) {
+  .navbar-furia {
+    .navbar-brand {
+      font-size: $font-size-base;
+    }
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .player-image {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  .social-icons {
+    font-size: $font-size-base;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+// Melhorias para telas grandes
+@media (min-width: $breakpoint-xl) {
+  .container {
+    max-width: 1280px;
+  }
+  
+  
+}

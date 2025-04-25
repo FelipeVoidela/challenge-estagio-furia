@@ -1,0 +1,187 @@
+// Estilos específicos para responsividade
+// Breakpoints do Bootstrap:
+// xs: 0
+// sm: 576px
+// md: 768px
+// lg: 992px
+// xl: 1200px
+// xxl: 1400px
+
+// Estilos para dispositivos extra pequenos (telefones em modo retrato, menos de 576px)
+@media (max-width: 575.98px) {
+
+
+  .navbar-furia {
+    padding: 0.5rem;
+    
+    .navbar-brand {
+      font-size: 1rem;
+      
+      img {
+        height: 30px !important;
+      }
+    }
+  }
+  
+  .hero-section {
+    .carousel-caption {
+      padding: 0.5rem;
+      
+      h2 {
+        font-size: 1.5rem;
+      }
+      
+      p {
+        font-size: 0.875rem;
+      }
+      
+      .btn {
+        font-size: 0.875rem;
+        padding: 0.25rem 0.5rem;
+      }
+    }
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+  }
+  
+  .player-card {
+    .player-image {
+      width: 100px !important;
+      height: 100px !important;
+    }
+  }
+  
+  .match-card {
+    .match-teams {
+      font-size: 1rem;
+    }
+  }
+  
+  .footer {
+    text-align: center;
+    
+    .social-icons {
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+  }
+}
+
+// Estilos para dispositivos pequenos (telefones em modo paisagem, 576px e acima)
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .navbar-furia {
+    .navbar-brand {
+      img {
+        height: 35px !important;
+      }
+    }
+  }
+
+  .hero-section {
+    .carousel-caption {
+      h2 {
+        font-size: 1.75rem;
+        
+      }
+    }
+  }
+  
+  .player-card {
+    .player-image {
+      width: 120px !important;
+      height: 120px !important;
+    }
+  }
+}
+
+// Estilos para dispositivos médios (tablets, 768px e acima)
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .hero-section {
+    .carousel-caption {
+      max-width: 70%;
+    }
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
+
+// Estilos para dispositivos grandes (desktops, 992px e acima)
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+// Estilos para dispositivos extra grandes (desktops grandes, 1200px e acima)
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .hero-section {
+    .hero-image {
+      height: 550px !important;
+    }
+  }
+}
+
+// Estilos para dispositivos extra extra grandes (1400px e acima)
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+  
+  .hero-section {
+    .hero-image {
+      height: 600px !important;
+    }
+  }
+}
+
+
+@media (hover: none) {
+  .card-furia {
+    &:hover {
+      transform: none;
+      box-shadow: $box-shadow-sm;
+    }
+  }
+  
+  .btn-furia {
+    &:hover {
+      transform: none;
+    }
+  }
+  
+  .navbar-furia {
+    .nav-link {
+      padding: 0.75rem 1rem;
+    }
+  }
+}
+
+
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-section {
+    .hero-image {
+      height: 300px !important;
+    }
+  }
+}
+
+
+@media (max-width: 767.98px) {
+  button, a, input, select, textarea {
+    min-height: 44px; 
+  }
+  
+  .form-control {
+    font-size: 16px; 
+  }
+}
+
+

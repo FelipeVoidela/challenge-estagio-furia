@@ -1,0 +1,46 @@
+// Cores principais da FURIA
+$primary: #000000;  // Preto
+$secondary: #00b2ff; // Azul FURIA
+$accent: #ffffff;   // Branco
+$dark: #1a1a1a;     // Cinza escuro
+$light: #f8f9fa;    // Cinza claro
+
+// Breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+$breakpoint-xxl: 1400px;
+
+// Fontes
+$font-family-base: 'Roboto', sans-serif;
+$font-family-headings: 'Montserrat', sans-serif;
+
+// Tamanhos de fonte
+$font-size-base: 1rem;
+$font-size-lg: 1.25rem;
+$font-size-sm: 0.875rem;
+$font-size-xs: 0.75rem;
+
+// Espaçamento
+$spacing-base: 1rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1.5rem;
+$spacing-lg: 2rem;
+$spacing-xl: 3rem;
+
+// Bordas
+$border-radius: 0.25rem;
+$border-radius-lg: 0.5rem;
+$border-radius-sm: 0.125rem;
+
+// Sombras
+$box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+$box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+$box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+// Transições
+$transition-base: all 0.2s ease-in-out;
+$transition-slow: all 0.3s ease-in-out;
+$transition-fast: all 0.1s ease-in-out;

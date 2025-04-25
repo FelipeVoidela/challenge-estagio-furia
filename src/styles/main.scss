@@ -1,0 +1,230 @@
+@import 'variables';
+@import 'components';
+@import 'responsive';
+@import '~bootstrap/scss/bootstrap';
+
+// Estilos globais
+body {
+  font-family: $font-family-base;
+  background-color: $light;
+  color: $dark;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-headings;
+  font-weight: 700;
+}
+
+// Navbar personalizada
+.navbar-furia {
+  background-color: $dark;
+  box-shadow: $box-shadow;
+  
+  .navbar-brand {
+    color: $accent;
+    font-weight: 700;
+
+    
+    &:hover {
+      color: $accent;
+    }
+  }
+  .nav-link {
+    color: $accent;
+    outline: none;
+   
+  
+    
+    &:hover, &.active {
+      color: $accent;      
+      outline: none;
+      box-shadow: 0 5px 12px $primary; 
+      border-radius: 10%;
+    }
+  }
+}
+
+
+
+// Cards personalizados
+.card-furia {
+  border: none;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  transition: $transition-base;
+  box-shadow: $box-shadow-sm;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba($primary, 0.4); 
+  }
+  
+  .card-title {
+    color: $primary;
+    font-weight: 700;
+  }
+  
+  .card-subtitle {
+    color: $secondary;
+  }
+}
+
+// Botões personalizados
+.btn-furia {
+  background-color: $dark;
+  border: none;
+  color: $accent;
+  font-weight: 600;
+  transition: $transition-base;
+  
+  &:hover {
+    background-color: darken($primary, 10%);
+    transform: translateY(-2px);
+  }
+}
+
+// Seção de notícias
+.news-section {
+  padding: $spacing-lg 0;
+  
+  .news-card {
+    height: 100%;
+    
+    .news-date {
+      font-size: $font-size-sm;
+      color: lighten($dark, 30%);
+    }
+  }
+}
+
+// Seção de jogadores
+.player-section {
+  padding: $spacing-lg 0;
+  background-color: darken($light, 3%);
+  
+  .player-card {
+    text-align: center;
+    
+    .player-image {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin: 0 auto;
+      border: 3px solid $secondary;
+    }
+    
+    .player-name {
+      margin-top: $spacing-sm;
+      font-weight: 700;
+    }
+    
+    .player-role {
+      color: $secondary;
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+// Seção de agenda
+.schedule-section {
+  padding: $spacing-lg 0;
+  
+  .match-card {
+    border-left: 4px solid $secondary;
+    
+    .match-date {
+      font-size: $font-size-sm;
+      color: lighten($dark, 30%);
+    }
+    
+    .match-teams {
+      font-weight: 700;
+    }
+    
+    .match-info {
+      font-size: $font-size-sm;
+    }
+  }
+}
+
+// Footer
+.footer {
+  background-color: $dark;
+  color: $accent;
+  padding: $spacing-lg 0;
+  
+  a {
+    color: $secondary;
+    transition: $transition-base;
+    
+    &:hover {
+      color: $accent;
+      text-decoration: none;
+    }
+  }
+  
+  .social-icons {
+    font-size: $font-size-lg;
+    
+    a {
+      margin-right: $spacing-sm;
+    }
+  }
+}
+
+// Hero section com melhorias
+.hero-section {
+  .carousel-caption {
+    background-color: rgba($primary, 0.7);
+    border-radius: $border-radius;
+    padding: $spacing-md;
+    max-width: 80%;
+    margin: 0 auto;
+    
+    @media (min-width: $breakpoint-md) {
+      max-width: 60%;
+    }
+  }
+  
+  .carousel-control-prev, .carousel-control-next {
+    width: 10%;
+  }
+}
+
+// Melhorias para acessibilidade
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+// Animações
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+// Utilitários
+.text-furia {
+  color: $secondary !important;
+}
+
+.bg-furia {
+  background-color: $secondary !important;
+}
+
+.border-furia {
+  border-color: $secondary !important;
+}

@@ -20,6 +20,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-furia {
   background-color: $dark;
   box-shadow: $box-shadow;
+ 
   
   .navbar-brand {
     color: $accent;
@@ -54,6 +55,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   transition: $transition-base;
   box-shadow: $box-shadow-sm;
+  background-color: darken($light, 3%);
   
   &:hover {
     transform: translateY(-5px);
@@ -101,7 +103,6 @@ h1, h2, h3, h4, h5, h6 {
 // Seção de jogadores
 .player-section {
   padding: $spacing-lg 0;
-  background-color: darken($light, 3%);
   
   .player-card {
     text-align: center;
@@ -112,7 +113,6 @@ h1, h2, h3, h4, h5, h6 {
       height: 150px;
       object-fit: cover;
       margin: 0 auto;
-      border: 3px solid $secondary;
     }
     
     .player-name {

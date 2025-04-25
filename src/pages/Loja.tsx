@@ -48,7 +48,7 @@ const Loja: React.FC = () => {
               <p className="mb-0">Vista-se como um verdadeiro guerreiro FURIA com nossa linha exclusiva de produtos.</p>
             </Col>
             <Col md={4} className="text-md-end mt-3 mt-md-0">
-              <Button variant="light" href="https://shop.furia.gg" target="_blank" rel="noopener noreferrer">
+              <Button variant="light" href="https://www.furia.gg" target="_blank" rel="noopener noreferrer">
                 Visitar Loja Oficial
               </Button>
             </Col>
@@ -148,7 +148,7 @@ const Loja: React.FC = () => {
                       variant="primary" 
                       className="btn-furia w-100"
                       disabled={!produto.disponivel}
-                      onClick={() => window.open('https://shop.furia.gg', '_blank')}
+                      onClick={() => window.open('https://www.furia.gg', '_blank')}
                     >
                       {produto.disponivel ? 'Comprar' : 'Indisponível'}
                     </Button>

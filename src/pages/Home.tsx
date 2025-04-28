@@ -3,6 +3,8 @@ import { Container, Row, Col, Card, Carousel } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { Noticia, Partida, Jogador } from '../types';
 import ButtonLink from '../components/ButtonLink';
+import LiveStatus from '../components/LiveStatus/LiveStatus';
+import FanChatSimulator from '../components/FanChatSimulator/FanChatSimulator';
 import backgroundCsHome from '../assets/images/backgrounds/furiaBackgroundCs.jpg';
 import backgroundVlrHome from '../assets/images/backgrounds/furiabackgroundVlr.jpg';
 
@@ -61,6 +63,20 @@ const Home: React.FC = () => {
             </div>
           </Carousel.Item>
         </Carousel>
+      </section>
+
+      {/* Live Status - Jogos ao Vivo e Chat da Torcida */}
+      <section className="live-status-section py-5 bg-dark">
+        <Container>
+          <Row>
+            <Col lg={7}>
+              <LiveStatus />
+            </Col>
+            <Col lg={5}>
+              <FanChatSimulator />
+            </Col>
+          </Row>
+        </Container>
       </section>
 
       {/* Notícias Recentes */}

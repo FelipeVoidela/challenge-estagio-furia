@@ -6,6 +6,7 @@ import './styles/main.scss';
 // Importação de componentes
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Chat from './components/Chat/Chat';
 
 // Importação de páginas
 import Home from './pages/Home';
@@ -39,6 +40,8 @@ function App() {
           </Routes>
         </main>
         <Footer />
+        {/* Componente de Chat global, disponível em todas as páginas */}
+        <Chat />
       </div>
     </Router>
   );

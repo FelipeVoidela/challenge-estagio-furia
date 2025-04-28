@@ -1,0 +1,294 @@
+// Estilos para o componente LiveStatus
+@import '../../styles/variables.scss';
+@import '../Chat/chat-variables.scss'; // Reutilizar algumas variáveis do chat se aplicável
+
+.live-status-container {
+  background-color: $dark-bg;
+  color: $light-text;
+  padding: $spacing-md;
+  border-radius: $border-radius-lg;
+  margin-bottom: $spacing-lg;
+  box-shadow: $box-shadow;
+
+  &.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    .loading-spinner {
+      text-align: center;
+      p {
+        margin-top: $spacing-sm;
+        color: $gray-500;
+      }
+      .spinner {
+        border: 4px solid $gray-700;
+        border-top: 4px solid $furia-primary;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 1s linear infinite;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &.no-games {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 200px;
+    text-align: center;
+    .no-games-message {
+      i {
+        font-size: 3rem;
+        color: $gray-600;
+        margin-bottom: $spacing-base;
+      }
+      h3 {
+        color: $light-text;
+        margin-bottom: $spacing-sm;
+      }
+      p {
+        color: $gray-500;
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.live-status-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: $spacing-md;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    color: $white;
+    font-family: $font-family-headings;
+    font-size: 1.5rem;
+    margin: 0;
+
+    .live-indicator {
+      width: 10px;
+      height: 10px;
+      background-color: red;
+      border-radius: 50%;
+      margin-right: $spacing-sm;
+      animation: pulse 1.5s infinite ease-in-out;
+    }
+  }
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(red, 0.7); }
+  70% { box-shadow: 0 0 0 10px rgba(red, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(red, 0); }
+}
+
+.game-selector {
+  display: flex;
+  gap: $spacing-sm;
+
+  .game-selector-button {
+    background-color: $gray-700;
+    border: 2px solid transparent;
+    border-radius: $border-radius;
+    padding: $spacing-sm;
+    cursor: pointer;
+    transition: $transition-base;
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm / 2;
+
+    .team-logo {
+      height: 20px;
+      width: 20px;
+      object-fit: contain;
+    }
+    
+    span {
+        color: $gray-500;
+        font-size: $font-size-sm;
+    }
+
+    &:hover {
+      background-color: $gray-600;
+    }
+
+    &.active {
+      border-color: $furia-primary;
+      background-color: lighten($gray-700, 5%);
+    }
+  }
+}
+
+.live-game-details {
+  background-color: $gray-800;
+  border-radius: $border-radius;
+  padding: $spacing-md;
+}
+
+.game-info {
+  .competition-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-base;
+    padding-bottom: $spacing-base;
+    border-bottom: 1px solid $gray-700;
+
+    .competition-name {
+      font-weight: bold;
+      color: $white;
+    }
+    .game-type {
+      background-color: $furia-primary;
+      color: $white;
+      padding: 3px 8px;
+      border-radius: $border-radius-sm;
+      font-size: $font-size-xs;
+      text-transform: uppercase;
+    }
+  }
+
+  .teams-score {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-md;
+
+    .team {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100px; // Largura fixa para alinhar
+
+      .team-logo {
+        height: 40px;
+        margin-bottom: $spacing-sm / 2;
+        object-fit: contain;
+      }
+      .team-name {
+        font-size: $font-size-sm;
+        color: $gray-500;
+      }
+      
+      &.home-team {
+          align-items: flex-start;
+          text-align: left;
+      }
+      &.away-team {
+          align-items: flex-end;
+          text-align: right;
+      }
+    }
+
+    .score-display {
+      display: flex;
+      align-items: center;
+      font-size: 2.5rem;
+      font-weight: bold;
+      color: $white;
+
+      .score-separator {
+        margin: 0 $spacing-sm;
+        color: $gray-600;
+      }
+      .home-score {
+        color: $furia-primary;
+      }
+      .away-score {
+        color: $light-text;
+      }
+    }
+  }
+
+  .game-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $dark-bg;
+    padding: $spacing-sm $spacing-base;
+    border-radius: $border-radius;
+    font-size: $font-size-sm;
+
+    .status-indicator {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        margin-right: $spacing-sm / 2;
+      }
+
+      &.live {
+        color: red;
+        .dot {
+          background-color: red;
+          animation: pulse 1.5s infinite ease-in-out;
+        }
+      }
+      &.finished {
+        color: $gray-500;
+      }
+      &.not-started {
+        color: $gray-500;
+      }
+    }
+
+    .game-details {
+      display: flex;
+      gap: $spacing-base;
+      color: $gray-500;
+      
+      span {
+          display: inline-block;
+      }
+    }
+  }
+}
+
+// Responsividade
+@media (max-width: $breakpoint-md) {
+  .live-status-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: $spacing-base;
+  }
+  .game-selector {
+    flex-wrap: wrap;
+  }
+  .teams-score {
+    .team {
+        width: 80px;
+        .team-logo {
+            height: 30px;
+        }
+    }
+    .score-display {
+        font-size: 2rem;
+    }
+  }
+  .game-status {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-sm;
+      .game-details {
+          flex-direction: column;
+          gap: $spacing-sm / 2;
+      }
+  }
+}
+

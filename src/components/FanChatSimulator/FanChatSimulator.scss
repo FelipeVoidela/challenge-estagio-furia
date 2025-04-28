@@ -1,0 +1,158 @@
+// Estilos para o componente FanChatSimulator
+@import '../../styles/variables.scss';
+@import '../Chat/chat-variables.scss'; // Reutilizar algumas variáveis do chat
+
+// Definir variáveis adicionais
+$gray-400: lighten($dark, 40%); // Cinza mais claro para texto
+
+.fan-chat-simulator {
+  background-color: $dark-bg;
+  color: $light-text;
+  border-radius: $border-radius-lg;
+  box-shadow: $box-shadow;
+  display: flex;
+  flex-direction: column;
+  height: 400px;
+  margin-top: $spacing-md;
+}
+
+.fan-chat-header {
+  background-color: $furia-primary;
+  color: $white;
+  padding: $spacing-sm $spacing-md;
+  border-top-left-radius: $border-radius-lg;
+  border-top-right-radius: $border-radius-lg;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .fan-chat-controls {
+    .toggle-button {
+      background: none;
+      border: none;
+      color: $white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 5px;
+      opacity: 0.8;
+      transition: $transition-base;
+
+      &:hover {
+        opacity: 1;
+      }
+
+      &.active {
+        color: $white;
+      }
+    }
+  }
+}
+
+.fan-chat-messages {
+  flex-grow: 1;
+  padding: $spacing-md;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  background-color: $gray-800;
+
+  .fan-message {
+    padding: $spacing-sm $spacing-md;
+    border-radius: $border-radius;
+    max-width: 90%;
+    animation: fadeIn 0.3s ease-in-out;
+
+    .message-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 4px;
+      font-size: 0.8rem;
+
+      .username {
+        font-weight: bold;
+      }
+
+      .timestamp {
+        color: $gray-500;
+        font-size: 0.75rem;
+      }
+    }
+
+    .message-content {
+      p {
+        margin: 0;
+        word-wrap: break-word;
+      }
+    }
+
+    &.furia {
+      align-self: flex-start;
+      background-color: rgba($furia-primary, 0.2);
+      border-left: 3px solid $furia-primary;
+
+      .username {
+        color: $furia-primary;
+      }
+    }
+
+    &.opponent {
+      align-self: flex-start;
+      background-color: rgba($gray-700, 0.5);
+      border-left: 3px solid $gray-600;
+
+      .username {
+        color: $gray-500;
+      }
+    }
+
+    &.neutral {
+      align-self: center;
+      background-color: rgba($gray-700, 0.3);
+      border-left: 3px solid $gray-500;
+      font-style: italic;
+
+      .username {
+        color: $gray-400;
+      }
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsividade
+@media (max-width: $breakpoint-md) {
+  .fan-chat-simulator {
+    height: 350px;
+  }
+  
+  .fan-chat-header {
+    h3 {
+      font-size: 1rem;
+    }
+  }
+  
+  .fan-chat-messages {
+    .fan-message {
+      max-width: 95%;
+    }
+  }
+}

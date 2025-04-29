@@ -3,7 +3,7 @@
 // Para usar o chatbot com a inteligência artificial do GPT,
 // você PRECISA substituir a string vazia abaixo pela sua chave de API da OpenAI.
 // Obtenha sua chave em: https://platform.openai.com/account/api-keys
-export const OPENAI_API_KEY: string = ""; // <-- COLOQUE SUA CHAVE DE API AQUI (Tipo string explícito)
+export const OPENAI_API_KEY: string = "exemplo"; // <-- COLOQUE SUA CHAVE DE API AQUI (Tipo string explícito)
 
 
 // Configurações da API (Geralmente não precisam ser alteradas)
@@ -50,9 +50,8 @@ Evite responder perguntas não relacionadas a esports ou à FURIA.
 Se não souber a resposta, diga que não tem essa informação no momento.
 `;
 
-// ========================================================================
+
 // Função de Verificação da Chave (Não alterar)
-// ========================================================================
 export const isApiKeyConfigured = (): boolean => { // Garante que a função retorna boolean
   // Verifica se a chave foi preenchida e não é apenas um placeholder
   // Garante que OPENAI_API_KEY é tratado como string

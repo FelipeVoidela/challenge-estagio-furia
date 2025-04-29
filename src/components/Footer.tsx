@@ -41,6 +41,7 @@ const Footer: React.FC = () => {
             <h5>Contato</h5>
             <ul className="list-unstyled">
               <li><i className="bi bi-envelope me-2"></i> contato@furia.gg</li>
+              <li><i className="bi bi-envelope me-2"></i> felipevoidela@gmail.com</li>
               <li><i className="bi bi-geo-alt me-2"></i> São Paulo, Brasil</li>
               <li><a href="/faq">Perguntas Frequentes</a></li>
             </ul>

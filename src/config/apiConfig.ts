@@ -3,7 +3,7 @@
 // Para usar o chatbot com a inteligência artificial do GPT,
 // você PRECISA substituir a string vazia abaixo pela sua chave de API da OpenAI.
 // Obtenha sua chave em: https://platform.openai.com/account/api-keys
-export const OPENAI_API_KEY: string = "exemplo"; // <-- COLOQUE SUA CHAVE DE API AQUI (Tipo string explícito)
+export const OPENAI_API_KEY: string = ""; // <-- COLOQUE SUA CHAVE DE API AQUI (Tipo string explícito)
 
 
 // Configurações da API (Geralmente não precisam ser alteradas)

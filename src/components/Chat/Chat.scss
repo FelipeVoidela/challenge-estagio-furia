@@ -117,7 +117,7 @@
   flex-grow: 1;
   padding: 15px;
   overflow-y: auto;
-  background-color: $gray-800; 
+  background-color: $gray-800; // Fundo um pouco mais claro para mensagens
   color: $light-text;
 
   .message {
@@ -259,7 +259,7 @@
   }
 }
 
-
+// Responsividade (exemplo básico)
 @media (max-width: 480px) {
   .chat-window {
     width: calc(100% - 40px); // Ocupar mais espaço em telas pequenas

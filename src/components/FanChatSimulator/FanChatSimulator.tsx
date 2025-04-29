@@ -20,7 +20,7 @@ interface GameEvent {
 
 interface FanChatSimulatorProps {
   gameId?: number;
-  gameType?: 'CS:GO' | 'VALORANT';
+  gameType?: 'CS:GO' | 'VALORANT' | 'League of Legends';
   autoScroll?: boolean;
 }
 

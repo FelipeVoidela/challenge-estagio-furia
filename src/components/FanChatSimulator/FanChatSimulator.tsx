@@ -20,7 +20,7 @@ interface GameEvent {
 
 interface FanChatSimulatorProps {
   gameId?: number;
-  gameType?: 'CS:GO' | 'VALORANT' | 'League of Legends';
+  gameType?: 'CS:GO' | 'VALORANT';
   autoScroll?: boolean;
 }
 
@@ -31,7 +31,8 @@ const FanChatSimulator: React.FC<FanChatSimulatorProps> = ({
 }) => {
   const [messages, setMessages] = useState<FanMessage[]>([]);
   const [isActive, setIsActive] = useState<boolean>(true);
-  const messagesEndRef = useRef<HTMLDivElement>(null);
+  // Ref para o container de mensagens, para controlar o scroll interno
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   
   // Nomes de usuários para simular torcedores
   const furiaFanNames = [
@@ -282,7 +283,7 @@ const FanChatSimulator: React.FC<FanChatSimulatorProps> = ({
   // Função para adicionar uma nova mensagem
   const addMessage = (text: string, team: 'furia' | 'opponent' | 'neutral') => {
     const newMessage: FanMessage = {
-      id: messages.length + 1,
+      id: Date.now() + Math.random(), // Usar timestamp + random para ID único
       text,
       username: getRandomUsername(team),
       team,
@@ -354,7 +355,8 @@ const FanChatSimulator: React.FC<FanChatSimulatorProps> = ({
     return () => {
       setMessages([]);
     };
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Dependências removidas intencionalmente para rodar apenas na montagem
 
   // Efeito para simular eventos aleatórios durante o jogo
   useEffect(() => {
@@ -383,12 +385,15 @@ const FanChatSimulator: React.FC<FanChatSimulatorProps> = ({
     return () => {
       clearInterval(eventInterval);
     };
-  }, [isActive]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isActive]); // Dependências removidas intencionalmente para rodar apenas quando isActive muda
 
-  // Efeito para rolar para a última mensagem
+  // Efeito para rolar para a última mensagem DENTRO DO CONTAINER
   useEffect(() => {
-    if (autoScroll && messagesEndRef.current) {
-      messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (autoScroll && messagesContainerRef.current) {
+      const container = messagesContainerRef.current;
+      // Rola o container de mensagens para o final
+      container.scrollTop = container.scrollHeight;
     }
   }, [messages, autoScroll]);
 
@@ -415,7 +420,8 @@ const FanChatSimulator: React.FC<FanChatSimulatorProps> = ({
         </div>
       </div>
       
-      <div className="fan-chat-messages">
+      {/* Adicionar a ref ao container de mensagens */}
+      <div className="fan-chat-messages" ref={messagesContainerRef}>
         {messages.map((message) => (
           <div key={message.id} className={`fan-message ${message.team}`}>
             <div className="message-header">
@@ -427,10 +433,12 @@ const FanChatSimulator: React.FC<FanChatSimulatorProps> = ({
             </div>
           </div>
         ))}
-        <div ref={messagesEndRef} />
+        {/* O div de referência final não é mais necessário para este método de scroll */}
+        {/* <div ref={messagesEndRef} /> */}
       </div>
     </div>
   );
 };
 
 export default FanChatSimulator;
+

@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Carousel } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { Noticia, Partida, Jogador } from '../types';
 import ButtonLink from '../components/ButtonLink';
 import LiveStatus from '../components/LiveStatus/LiveStatus';

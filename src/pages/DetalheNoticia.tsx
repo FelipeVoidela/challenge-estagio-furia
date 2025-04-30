@@ -107,16 +107,16 @@ const DetalheNoticia: React.FC = () => {
                   <div className="noticia-compartilhar mt-5 pt-3 border-top">
                     <h5 className="mb-3">Compartilhar:</h5>
                     <div className="d-flex gap-2">
-                      <a href="#" className="btn btn-outline-primary btn-sm">
+                      <a href="https://x.com/FURIA" className="btn btn-outline-primary btn-sm">
                         <i className="bi bi-twitter me-1"></i>Twitter
                       </a>
-                      <a href="#" className="btn btn-outline-primary btn-sm">
+                      <a href="https://www.facebook.com/furiagg/" className="btn btn-outline-primary btn-sm">
                         <i className="bi bi-facebook me-1"></i>Facebook
                       </a>
-                      <a href="#" className="btn btn-outline-primary btn-sm">
+                      <a href="https://wa.me/5511993404466" className="btn btn-outline-primary btn-sm">
                         <i className="bi bi-whatsapp me-1"></i>WhatsApp
                       </a>
-                      <a href="#" className="btn btn-outline-primary btn-sm">
+                      <a href="#Noticias" className="btn btn-outline-primary btn-sm">
                         <i className="bi bi-link-45deg me-1"></i>Copiar Link
                       </a>
                     </div>
@@ -149,7 +149,7 @@ const DetalheNoticia: React.FC = () => {
                               </div>
                               <div>
                                 <h6 className="mb-1">{noticiaRel.titulo}</h6>
-                                <small className="text-muted">{noticiaRel.data}</small>
+                                <small className="text-white">{noticiaRel.data}</small>
                               </div>
                             </div>
                           </ButtonLink>

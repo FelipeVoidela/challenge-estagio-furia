@@ -184,4 +184,54 @@
   }
 }
 
+// Media queries from components.scss
+
+// Melhorias para dispositivos móveis
+@media (max-width: $breakpoint-md) {
+  .navbar-furia {
+    .navbar-brand {
+      font-size: $font-size-base;
+    }
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .player-image {
+    width: 100px !important;
+    height: 100px !important;
+  }
+  
+  .social-icons {
+    font-size: $font-size-base;
+  }
+  
+  h1 {
+    font-size: 1.75rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+}
+
+// Melhorias para telas grandes
+@media (min-width: $breakpoint-xl) {
+  .container {
+    max-width: 1280px;
+  }
+  
+  
+}
 

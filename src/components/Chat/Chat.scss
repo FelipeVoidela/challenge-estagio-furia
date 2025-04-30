@@ -1,6 +1,5 @@
 // Estilos para o componente de Chat
 @import '../../styles/variables.scss'; // Importar variáveis globais primeiro
-@import './chat-variables.scss'; // Importar variáveis específicas do chat
 
 .chat-container {
   position: fixed;
@@ -10,8 +9,8 @@
 }
 
 .chat-toggle-button {
-  background-color: $furia-primary; // Usar cor primária da Furia
-  color: $white;
+  background-color: $secondary; // Usar cor primária da Furia
+  color: $accent;
   border: none;
   border-radius: 50%;
   width: 60px;
@@ -27,13 +26,13 @@
 
   &:hover {
     transform: scale(1.1);
-    background-color: darken($furia-primary, 10%);
+    background-color: darken($secondary, 10%);
   }
 
   &.open {
-    background-color: $furia-secondary; // Cor diferente quando aberto
+    background-color: darken($secondary, 15%); // Cor diferente quando aberto
     &:hover {
-      background-color: darken($furia-secondary, 10%);
+      background-color: darken(darken($secondary, 15%), 10%);
     }
   }
 
@@ -58,7 +57,7 @@
   right: 20px;
   width: 350px;
   height: 450px;
-  background-color: $dark-bg; // Fundo escuro
+  background-color: $dark; // Fundo escuro
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   display: flex;
@@ -78,8 +77,8 @@
 }
 
 .chat-header {
-  background-color: $furia-primary; // Cor primária no cabeçalho
-  color: $white;
+  background-color: $secondary; // Cor primária no cabeçalho
+  color: $accent;
   padding: 10px 15px;
   display: flex;
   justify-content: space-between;
@@ -102,7 +101,7 @@
   .chat-close-button {
     background: none;
     border: none;
-    color: $white;
+    color: $accent;
     font-size: 1.2rem;
     cursor: pointer;
     padding: 5px;
@@ -117,8 +116,8 @@
   flex-grow: 1;
   padding: 15px;
   overflow-y: auto;
-  background-color: $gray-800; // Fundo um pouco mais claro para mensagens
-  color: $light-text;
+  background-color: lighten($dark, 5%); // Fundo um pouco mais claro para mensagens
+  color: $light;
 
   .message {
     display: flex;
@@ -137,7 +136,7 @@
 
       .message-time {
         font-size: 0.75rem;
-        color: $gray-500;
+        color: lighten($dark, 30%);
         display: block;
         margin-top: 5px;
         text-align: right;
@@ -147,11 +146,11 @@
     &.user {
       justify-content: flex-end;
       .message-content {
-        background-color: $furia-primary; // Mensagem do usuário com cor primária
-        color: $white;
+        background-color: $secondary; // Mensagem do usuário com cor primária
+        color: $accent;
         border-bottom-right-radius: 5px;
         .message-time {
-          color: rgba($white, 0.7);
+          color: rgba($accent, 0.7);
         }
       }
     }
@@ -160,15 +159,15 @@
     &.fan { // Estilo para mensagens de bot e fan (simulador)
       justify-content: flex-start;
       .message-content {
-        background-color: $gray-700; // Mensagem do bot/fan com cor cinza
-        color: $light-text;
+        background-color: lighten($dark, 10%); // Mensagem do bot/fan com cor cinza
+        color: $light;
         border-bottom-left-radius: 5px;
       }
     }
     
     &.typing {
         .message-content {
-            background-color: $gray-700;
+            background-color: lighten($dark, 10%);
             padding: 12px 15px;
         }
         .typing-indicator {
@@ -178,7 +177,7 @@
                 height: 8px;
                 width: 8px;
                 margin: 0 2px;
-                background-color: $gray-500;
+                background-color: lighten($dark, 30%);
                 border-radius: 50%;
                 display: inline-block;
                 animation: bounce 1.3s infinite ease-in-out;
@@ -198,32 +197,32 @@
 .chat-input-container {
   display: flex;
   padding: 10px 15px;
-  border-top: 1px solid $gray-700;
-  background-color: $dark-bg;
+  border-top: 1px solid lighten($dark, 10%);
+  background-color: $dark;
 
   .chat-input {
     flex-grow: 1;
     padding: 10px 15px;
-    border: 1px solid $gray-600;
+    border: 1px solid lighten($dark, 15%);
     border-radius: 20px;
-    background-color: $gray-700;
-    color: $light-text;
+    background-color: lighten($dark, 10%);
+    color: $light;
     margin-right: 10px;
     outline: none;
 
     &::placeholder {
-      color: $gray-500;
+      color: lighten($dark, 30%);
     }
 
     &:focus {
-      border-color: $furia-primary;
-      box-shadow: 0 0 0 2px rgba($furia-primary, 0.25);
+      border-color: $secondary;
+      box-shadow: 0 0 0 2px rgba($secondary, 0.25);
     }
   }
 
   .chat-send-button {
-    background-color: $furia-primary;
-    color: $white;
+    background-color: $secondary;
+    color: $accent;
     border: none;
     border-radius: 50%;
     width: 40px;
@@ -236,11 +235,11 @@
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: darken($furia-primary, 10%);
+      background-color: darken($secondary, 10%);
     }
 
     &:disabled {
-      background-color: $gray-600;
+      background-color: lighten($dark, 15%);
       cursor: not-allowed;
     }
   }
@@ -248,10 +247,10 @@
 
 .api-notice {
   padding: 8px 15px;
-  background-color: rgba($furia-primary, 0.1);
-  border-top: 1px solid $gray-700;
+  background-color: rgba($secondary, 0.1);
+  border-top: 1px solid lighten($dark, 10%);
   font-size: 0.8rem;
-  color: $gray-500;
+  color: lighten($dark, 30%);
   text-align: center;
   
   p {

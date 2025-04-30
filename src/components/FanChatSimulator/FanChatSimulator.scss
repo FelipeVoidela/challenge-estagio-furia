@@ -1,13 +1,12 @@
 // Estilos para o componente FanChatSimulator
 @import '../../styles/variables.scss';
-@import '../Chat/chat-variables.scss'; // Reutilizar algumas variáveis do chat
 
 // Definir variáveis adicionais
 $gray-400: lighten($dark, 40%); // Cinza mais claro para texto
 
 .fan-chat-simulator {
-  background-color: $dark-bg;
-  color: $light-text;
+  background-color: $dark;
+  color: $light;
   border-radius: $border-radius-lg;
   box-shadow: $box-shadow;
   display: flex;
@@ -17,8 +16,8 @@ $gray-400: lighten($dark, 40%); // Cinza mais claro para texto
 }
 
 .fan-chat-header {
-  background-color: $furia-primary;
-  color: $white;
+  background-color: $secondary;
+  color: $accent;
   padding: $spacing-sm $spacing-md;
   border-top-left-radius: $border-radius-lg;
   border-top-right-radius: $border-radius-lg;
@@ -37,7 +36,7 @@ $gray-400: lighten($dark, 40%); // Cinza mais claro para texto
     .toggle-button {
       background: none;
       border: none;
-      color: $white;
+      color: $accent;
       font-size: 1.2rem;
       cursor: pointer;
       padding: 5px;
@@ -49,7 +48,7 @@ $gray-400: lighten($dark, 40%); // Cinza mais claro para texto
       }
 
       &.active {
-        color: $white;
+        color: $accent;
       }
     }
   }
@@ -62,7 +61,7 @@ $gray-400: lighten($dark, 40%); // Cinza mais claro para texto
   display: flex;
   flex-direction: column;
   gap: $spacing-sm;
-  background-color: $gray-800;
+  background-color: lighten($dark, 5%);
 
   .fan-message {
     padding: $spacing-sm $spacing-md;
@@ -82,7 +81,7 @@ $gray-400: lighten($dark, 40%); // Cinza mais claro para texto
       }
 
       .timestamp {
-        color: $gray-500;
+        color: lighten($dark, 30%);
         font-size: 0.75rem;
       }
     }
@@ -96,28 +95,28 @@ $gray-400: lighten($dark, 40%); // Cinza mais claro para texto
 
     &.furia {
       align-self: flex-start;
-      background-color: rgba($furia-primary, 0.2);
-      border-left: 3px solid $furia-primary;
+      background-color: rgba($secondary, 0.2);
+      border-left: 3px solid $secondary;
 
       .username {
-        color: $furia-primary;
+        color: $secondary;
       }
     }
 
     &.opponent {
       align-self: flex-start;
-      background-color: rgba($gray-700, 0.5);
-      border-left: 3px solid $gray-600;
+      background-color: rgba(lighten($dark, 10%), 0.5);
+      border-left: 3px solid lighten($dark, 15%);
 
       .username {
-        color: $gray-500;
+        color: lighten($dark, 30%);
       }
     }
 
     &.neutral {
       align-self: center;
-      background-color: rgba($gray-700, 0.3);
-      border-left: 3px solid $gray-500;
+      background-color: rgba(lighten($dark, 10%), 0.3);
+      border-left: 3px solid lighten($dark, 30%);
       font-style: italic;
 
       .username {

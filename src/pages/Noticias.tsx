@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col, Card, Form, InputGroup } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
 import { Noticia } from '../types';
 import { noticias as noticiasData } from '../services/mockData';
 import ButtonLink from '../components/ButtonLink';

@@ -1,11 +1,18 @@
 // Cores principais da FURIA
-$primary: #000000;  // Preto
-$secondary: #00b2ff; // Azul FURIA
-$accent: #ffffff;   // Branco
-$dark: #1a1a1a;     // Cinza escuro
-$light: #f8f9fa;    // Cinza claro
+$furia-black: #000000;     // Preto
+$furia-blue: #00b2ff;      // Azul FURIA
+$furia-white: #ffffff;     // Branco
+$furia-dark-gray: #1a1a1a; // Cinza escuro
+$furia-light-gray: #f8f9fa; // Cinza claro
 
-// Breakpoints
+// Cores semânticas (podem referenciar as cores principais)
+$primary: $furia-black;
+$secondary: $furia-blue;
+$accent: $furia-white;
+$dark: $furia-dark-gray;
+$light: $furia-light-gray;
+
+// Breakpoints para responsividade
 $breakpoint-xs: 0;
 $breakpoint-sm: 576px;
 $breakpoint-md: 768px;
@@ -13,17 +20,16 @@ $breakpoint-lg: 992px;
 $breakpoint-xl: 1200px;
 $breakpoint-xxl: 1400px;
 
-// Fontes
+// Tipografia
 $font-family-base: 'Roboto', sans-serif;
 $font-family-headings: 'Montserrat', sans-serif;
 
-// Tamanhos de fonte
 $font-size-base: 1rem;
 $font-size-lg: 1.25rem;
 $font-size-sm: 0.875rem;
 $font-size-xs: 0.75rem;
 
-// Espaçamento
+// Espaçamento (margens e paddings)
 $spacing-base: 1rem;
 $spacing-sm: 0.5rem;
 $spacing-md: 1.5rem;
@@ -44,3 +50,14 @@ $box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175);
 $transition-base: all 0.2s ease-in-out;
 $transition-slow: all 0.3s ease-in-out;
 $transition-fast: all 0.1s ease-in-out;
+
+// Variáveis adicionais para o componente de Chat
+$furia-primary: $secondary; // Azul FURIA
+$furia-secondary: darken($secondary, 15%); // Azul FURIA mais escuro
+$dark-bg: $dark; // Fundo escuro
+$gray-800: lighten($dark, 5%); // Cinza escuro para fundo de mensagens
+$gray-700: lighten($dark, 10%); // Cinza para mensagens do bot
+$gray-600: lighten($dark, 15%); // Cinza para bordas
+$gray-500: lighten($dark, 30%); // Cinza para texto secundário
+$light-text: $light; // Texto claro
+$white: $accent; // Branco

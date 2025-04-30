@@ -1,11 +1,9 @@
-import { Jogador, Noticia, Partida, Produto, FAQ, Curiosidade, PerguntaQuiz, PostRedeSocial } from '../types';
+import { Jogador, Noticia, Partida, Produto, FAQ, Curiosidade, PerguntaQuiz} from '../types';
 import furiaVitoria2023 from '../assets/images/mock/furiaVitoria2023.webp';
 import camisaAdidas from '../assets/images/mock/furiaCamisaAdidas.webp';
 import vctFuria from '../assets/images/mock/vctFuriaMwzera.jpg';
 import bootcampEuropa from '../assets/images/mock/kscerato-furia-iem-major-rio-2022.jpg';
 import furiaAcademy from '../assets/images/mock/furiaAcademy.webp';
-
-
 
 
 

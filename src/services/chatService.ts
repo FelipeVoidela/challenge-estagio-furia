@@ -117,5 +117,5 @@ class ChatService {
     return responses[Math.floor(Math.random() * responses.length)];
   }
 }
-
-export default new ChatService();
+const chatServiceInstance = new ChatService();
+export default chatServiceInstance;

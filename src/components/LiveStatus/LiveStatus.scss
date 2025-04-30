@@ -1,6 +1,6 @@
 // Estilos para o componente LiveStatus
 @import '../../styles/variables.scss';
-@import '../Chat/chat-variables.scss'; // Reutilizar algumas variáveis do chat se aplicável
+@import '../Chat/Chat.scss'; // Reutilizar algumas variáveis do chat se aplicável
 
 .live-status-container {
   background-color: $dark-bg;

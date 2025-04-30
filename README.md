@@ -1,4 +1,4 @@
-# Challenge Estágio Furia - Frontend
+# Challenge Furia 
 
 Este projeto é uma aplicação frontend desenvolvida como parte de um desafio de estágio para a Furia. A aplicação simula um portal para fãs, oferecendo diversas funcionalidades interativas e informativas sobre a organização.
 

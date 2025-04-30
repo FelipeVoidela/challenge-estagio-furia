@@ -45,8 +45,8 @@ Siga os passos abaixo para configurar e rodar o projeto localmente:
     Certifique-se de ter o Node.js e o npm (ou Yarn) instalados. Execute o seguinte comando no diretório raiz do projeto:
     ```bash
     npm install
+    ```
     
-
 3.  **Execute a aplicação:**
     Para iniciar o servidor de desenvolvimento local, execute:
     ```bash

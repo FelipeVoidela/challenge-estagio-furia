@@ -36,13 +36,13 @@ O projeto inclui as seguintes seções e funcionalidades:
 
 Siga os passos abaixo para configurar e rodar o projeto localmente:
 
-1.  **Clone o repositório (se aplicável):**
+1.  **Clone o repositório:**
     ```bash
     git clone https://github.com/FelipeVoidela/challenge-furia
     ```
 
 2.  **Instale as dependências:**
-    Certifique-se de ter o Node.js e o npm (ou Yarn) instalados. Execute o seguinte comando no diretório raiz do projeto:
+    Certifique-se de ter o Node.js e o npm instalados. Execute o seguinte comando no diretório raiz do projeto:
     ```bash
     npm install
     ```

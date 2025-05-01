@@ -15,23 +15,23 @@ const ConteudoExclusivo: React.FC = () => {
       id: 1,
       titulo: 'Bastidores da Vitória contra Natus Vincere',
       tipo: 'video',
-      conteudo: 'https://furia.gg/videos/bastidores-navi-2025.mp4',
+      conteudo: 'https://www.youtube.com/embed/viunucG-fyo',
       data: '21/04/2025',
       descricao: 'Veja os bastidores da emocionante vitória da FURIA contra a Natus Vincere nas quartas de final do Major.'
     },
     {
       id: 2,
-      titulo: 'Entrevista Exclusiva com arT',
+      titulo: 'Classificados para os playoffs da Pro League XX',
       tipo: 'video',
-      conteudo: 'https://furia.gg/videos/entrevista-art-2025.mp4',
-      data: '18/04/2025',
-      descricao: 'Entrevista exclusiva com o capitão da FURIA, Andrei "arT" Piovezan, sobre a preparação para o Major.'
+      conteudo: 'https://www.youtube.com/embed/k6tAgimlZwU',
+      data: '18/09/2025',
+      descricao: 'Os melhores momentos da nossa classificação para os playoffs da Pro League XX.'
     },
     {
       id: 3,
       titulo: 'Galeria de Fotos: Bootcamp na Europa',
       tipo: 'imagem',
-      conteudo: 'https://furia.gg/images/bootcamp-europa-2025.jpg',
+      conteudo: 'https://www.strafe.com/_next/image/?url=https%3A%2F%2Fwww.strafe.com%2Fbr%2Fapostas-esports%2Fstrafe-news%2Fwp-content%2Fuploads%2Fsites%2F30%2Fr1193935_1296x729_16-9.jpg&w=1920&q=75',
       data: '10/04/2025',
       descricao: 'Confira as fotos exclusivas do bootcamp da FURIA na Europa antes do Major.'
     },
@@ -80,42 +80,59 @@ const ConteudoExclusivo: React.FC = () => {
   };
 
   const renderConteudo = (conteudo: ConteudoExclusivoType) => {
-    switch (conteudo.tipo) {
-      case 'video':
+    if (conteudo.tipo === 'video') {
+      if (conteudo.conteudo.includes('youtube.com') || conteudo.conteudo.includes('youtu.be')) {
         return (
           <div className="ratio ratio-16x9">
-            <video 
-              controls 
-              poster="https://via.placeholder.com/800x450?text=Video+FURIA"
+            <iframe
+              src={conteudo.conteudo}
+              title={conteudo.titulo}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
               className="rounded"
+            ></iframe>
+          </div>
+        );
+      } else {
+        return (
+          <div className="ratio ratio-16x9">
+            <video
+              controls
+              poster="https://via.placeholder.com/800x450?text=Video+FURIA"
+              className="rounded w-100"
             >
               <source src={conteudo.conteudo} type="video/mp4" />
               Seu navegador não suporta vídeos HTML5.
             </video>
           </div>
         );
-      case 'imagem':
-        return (
-          <img 
-            src={conteudo.conteudo} 
-            alt={conteudo.titulo}
-            className="img-fluid rounded"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.onerror = null;
-              target.src = 'https://via.placeholder.com/800x450?text=Imagem+FURIA';
-            }}
-          />
-        );
-      case 'texto':
-        return (
-          <div className="p-4 bg-light rounded">
-            <p className="mb-0">{conteudo.conteudo}</p>
-          </div>
-        );
-      default:
-        return null;
+      }
     }
+  
+    if (conteudo.tipo === 'imagem') {
+      return (
+        <img
+          src={conteudo.conteudo}
+          alt={conteudo.titulo}
+          className="img-fluid rounded"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.onerror = null;
+            target.src = 'https://via.placeholder.com/800x450?text=Imagem+FURIA';
+          }}
+        />
+      );
+    }
+  
+    if (conteudo.tipo === 'texto') {
+      return (
+        <div className="p-4 bg-light rounded">
+          <p className="mb-0">{conteudo.conteudo}</p>
+        </div>
+      );
+    }
+  
+    return null;
   };
 
   return (

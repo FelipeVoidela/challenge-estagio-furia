@@ -28,7 +28,7 @@ O projeto inclui as seguintes seções e funcionalidades:
 *   **TypeScript:** Superset do JavaScript que adiciona tipagem estática.
 *   **SCSS (Sass):** Pré-processador CSS para estilos mais organizados e reutilizáveis.
 *   **React Router:** Para gerenciamento de rotas na aplicação.
-*   **Axios (ou Fetch API):** Para realizar requisições HTTP.
+*   **Axios:** Para realizar requisições HTTP.
 *   **Node.js & npm:** Ambiente de execução e gerenciador de pacotes.
 
 
